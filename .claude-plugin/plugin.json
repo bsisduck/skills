@@ -1,0 +1,11 @@
+{
+  "name": "tracepath",
+  "description": "TracePath skills: /tracepath debugs production issues through the tracepath CLI, /tracepath-setup instruments a project to report to a TracePath instance.",
+  "version": "1.0.0",
+  "author": {
+    "name": "TracePath"
+  },
+  "homepage": "https://tracepath.dev",
+  "repository": "https://github.com/bsisduck/skills",
+  "license": "MIT"
+}

@@ -1,0 +1,15 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://cloud.tracepath.dev"
+    },
+    {
+      "pattern": "^https://ingest.tracepath.dev"
+    }
+  ],
+  "replacementPatterns": [],
+  "httpHeaders": [],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryMaxCount": 2
+}

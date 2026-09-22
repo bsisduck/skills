@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint (YAML, frontmatter, markdown)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate skill frontmatter
+        run: python3 .github/scripts/validate_frontmatter.py
+      - name: Validate plugin manifests
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+
+          for path in (".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"):
+              with open(path) as f:
+                  json.load(f)
+              print(f"{path}: valid JSON")
+
+          with open(".claude-plugin/plugin.json") as f:
+              plugin = json.load(f)
+          assert plugin["name"] == "tracepath", "plugin name must be 'tracepath'"
+          with open(".claude-plugin/marketplace.json") as f:
+              market = json.load(f)
+          assert market["name"] == "tracepath", "marketplace name must be 'tracepath'"
+          print("plugin manifests consistent")
+          EOF
+      - name: YAML lint
+        run: |
+          pip install yamllint
+          yamllint -d '{extends: default, rules: {line-length: disable, document-start: disable, truthy: {check-keys: false}}}' .github/workflows/
+      - name: Markdown link check
+        run: npx --yes markdown-link-check@3.13.0 --config .github/markdown-link-check.json skills/*/SKILL.md README.md

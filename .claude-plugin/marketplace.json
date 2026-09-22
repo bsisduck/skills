@@ -1,0 +1,14 @@
+{
+  "name": "tracepath",
+  "owner": {
+    "name": "TracePath"
+  },
+  "description": "Official TracePath plugin marketplace",
+  "plugins": [
+    {
+      "name": "tracepath",
+      "source": "./",
+      "description": "TracePath skills: /tracepath debugs production issues through the tracepath CLI, /tracepath-setup instruments a project to report to a TracePath instance."
+    }
+  ]
+}
