@@ -11,7 +11,7 @@ The TracePath iOS SDK reports **errors and crashes only**. There is no session o
 
 ## Swift apps: the TracePath iOS SDK
 
-The SDK lives at `github.com/tracepathhq/tracepath-ios`. Pure Swift, zero third-party dependencies, distributed via Swift Package Manager.
+The SDK lives at `github.com/bsisduck/tracepath-ios`. Pure Swift, zero third-party dependencies, distributed via Swift Package Manager.
 
 ### Requirements
 
@@ -20,10 +20,10 @@ The SDK lives at `github.com/tracepathhq/tracepath-ios`. Pure Swift, zero third-
 
 ### Install (Swift Package Manager)
 
-In Xcode: **File > Add Package Dependencies...** and enter `https://github.com/tracepathhq/tracepath-ios.git`, or add it to `Package.swift`:
+In Xcode: **File > Add Package Dependencies...** and enter `https://github.com/bsisduck/tracepath-ios.git`, or add it to `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/tracepathhq/tracepath-ios.git", from: "0.1.0"),
+.package(url: "https://github.com/bsisduck/tracepath-ios.git", from: "0.1.0"),
 ```
 
 then add `"TracePath"` to the app target's dependencies.

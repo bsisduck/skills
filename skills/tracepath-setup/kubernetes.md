@@ -15,13 +15,13 @@ Two OpenTelemetry Collector workloads, both using the **same project token as th
 | `tracepath-node-agent` (DaemonSet) | hostmetrics of each node, kubelet node/pod metrics, `/var/log/pods` | One instance row per node in the organization overview, `k8s.pod.*` metrics, container logs |
 | `tracepath-cluster-agent` (Deployment, 1 replica) | `k8s_cluster` state, Kubernetes events | Cluster metrics, events on the Logs page |
 
-Ready-made manifests: https://github.com/tracepathhq/tracepath/tree/main/examples/kubernetes
+Ready-made manifests: https://github.com/bsisduck/tracepath/tree/main/examples/kubernetes
 
 ```bash
 kubectl create namespace tracepath
 kubectl create secret generic tracepath-token -n tracepath \
   --from-literal=token='<project-token>'
-curl -O https://raw.githubusercontent.com/tracepathhq/tracepath/main/examples/kubernetes/tracepath-kubernetes.yaml
+curl -O https://raw.githubusercontent.com/bsisduck/tracepath/main/examples/kubernetes/tracepath-kubernetes.yaml
 # edit TRACEPATH_CLUSTER_NAME and TRACEPATH_ENDPOINT in the tracepath-settings ConfigMap
 kubectl apply -f tracepath-kubernetes.yaml
 ```

@@ -44,4 +44,4 @@ jobs:
           pip install yamllint
           yamllint -d '{extends: default, rules: {line-length: disable, document-start: disable, truthy: {check-keys: false}}}' .github/workflows/
       - name: Markdown link check
-        run: npx --yes markdown-link-check@3.13.0 --config .github/markdown-link-check.json skills/*/SKILL.md README.md
+        run: python3 .github/scripts/check_links.py 'skills/*/SKILL.md' 'README.md'

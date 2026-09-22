@@ -139,12 +139,12 @@ On POSIX systems (Linux, macOS), use the install script:
 curl -fsSL https://cli.tracepath.dev/install.sh | sh
 ```
 
-If the script cannot be used, install manually: prebuilt binaries are on the [tracepathhq/tracepath releases page](https://github.com/tracepathhq/tracepath/releases) under `cli/vX.Y.Z` tags (the latest release may be a Backend release, so filter for CLI tags):
+If the script cannot be used, install manually: prebuilt binaries are on the [tracepathhq/tracepath releases page](https://github.com/bsisduck/tracepath/releases) under `cli/vX.Y.Z` tags (the latest release may be a Backend release, so filter for CLI tags):
 
 ```bash
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m); [ "$ARCH" = "aarch64" ] && ARCH=arm64
-URL=$(curl -s "https://api.github.com/repos/tracepathhq/tracepath/releases?per_page=20" \
+URL=$(curl -s "https://api.github.com/repos/bsisduck/tracepath/releases?per_page=20" \
   | grep -o "https://[^\"]*tracepath_[^\"]*_${OS}_${ARCH}\.tar\.gz" | head -1)
 TMP=$(mktemp -d)
 curl -sL "$URL" | tar -xz -C "$TMP"
@@ -154,7 +154,7 @@ install -m 755 "$TMP/tracepath" ~/.local/bin/tracepath && rm -rf "$TMP"
 Make sure `~/.local/bin` is on `PATH` (or install to `/usr/local/bin`). Fallback, build from source (requires Go):
 
 ```bash
-git clone https://github.com/tracepathhq/tracepath && cd tracepath/cli
+git clone https://github.com/bsisduck/tracepath && cd tracepath/cli
 go build -o bin/tracepath ./cmd/tracepath && install -m 755 bin/tracepath ~/.local/bin/tracepath
 ```
 

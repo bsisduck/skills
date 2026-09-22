@@ -1,10 +1,19 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^https://cloud.tracepath.dev"
+      "pattern": "^https://(cloud|ingest|install)\\.tracepath\\.dev"
     },
     {
-      "pattern": "^https://ingest.tracepath.dev"
+      "pattern": "^https://github.com/bsisduck/tracepath"
+    },
+    {
+      "pattern": "^https://api\\.github\\.com/repos/bsisduck/tracepath"
+    },
+    {
+      "pattern": "^https://raw\\.githubusercontent\\.com/bsisduck/tracepath"
+    },
+    {
+      "pattern": "^https://github.com/bsisduck/tracepath-ios"
     }
   ],
   "replacementPatterns": [],
