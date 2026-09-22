@@ -95,3 +95,7 @@ skills/
 ## License
 
 MIT — see [LICENSE](LICENSE). Upstream work © dusanstanojeviccs (Traceway).
+
+## Contributing
+
+`main` is protected: all changes go through pull requests. README changes, new skills and doc fixes welcome via PR; CI (frontmatter + manifest + link checks) must pass.
